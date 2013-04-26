@@ -1,0 +1,110 @@
+<html>
+<head>
+	<title>Testing.</title>
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/flippant.css">
+  <style type="text/css">
+    .container { margin-top: 2em; }
+
+    h1 span {
+      animation: flipper 3s ease-in 4s infinite;
+      -moz-animation: flipper 3s ease-in 4s infinite;
+      -webkit-animation: flipper 3s ease-in 4s infinite;
+
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      display: inline-block;
+    }
+
+    @-webkit-keyframes flipper {
+      0% {
+        -webkit-transform: perspective(300px) rotateY(0deg);
+      }
+      15%, 100% {
+        -webkit-transform: perspective(300px) rotateY(360deg);
+      }
+    }
+    @-moz-keyframes flipper {
+      0% {
+        -moz-transform: perspective(300px) rotateY(0deg);
+      }
+      15%, 100% {
+        -moz-transform: perspective(300px) rotateY(360deg);
+      }
+    }
+    @keyframes flipper {
+      0% {
+        transform: perspective(300px) rotateY(0deg);
+      }
+      15%, 100% {
+        transform: perspective(300px) rotateY(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Flippant.<span>js</span></h1>
+        <p>
+          A mini js+css library for flipping things over.
+          <!-- <small class="muted">Bring Your Own Back.</small> -->
+        </p>
+
+        <p>Try it out on the buttons below</p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btnflip btn" href="#">Modal &raquo;</a> <a class="btnflip btn card" href="#">Card &raquo;</a></p>
+        </div>
+        <div class="span4 flippant">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btnflip" href="#">Modal &raquo;</a> <a class="btnflip btn card" href="#">Card &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btnflip" href="#">Modal &raquo;</a> <a class="btnflip btn card" href="#">Card &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+        <pre>
+var front = document.getElementByID('flipthis')
+  , back_content = "&lt;h1>I'm the back!&lt;/h1>" <span class="muted">// Generate or pull any HTML you want for the back.</span>
+  , back
+
+<span class="muted">// when the correct action happens, call flip!</span>
+back = flippant.flip(front, back_content)
+<span class="muted">// this creates the back element, sizes it and flips it around.</span>
+
+<span class="muted">// invoke the close event on the back element when it's time to close.</span>
+$(back).trigger('close')</pre>
+        <!-- <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p> -->
+        <p>Two modes: <code>card</code> (the default), and <code>modal</code>.</p>
+<pre>back = flippant.flip(front, back_content, 'modal')</pre>
+
+        <p>The back gets the default class of <code>flippant-modal-dark</code> for modal flips and
+          <code>flippant-modal-light</code> for cards. These styles can be overriden or you can
+          pass in your own class.
+        </p>
+<pre>back = flippant.flip(front, back_content, 'modal', 'my-modal-classname')</pre>
+
+<p>74.3% of the magic is in <a href="/css/flippant.css">the css file</a>.</p>
+
+    </div> <!-- /container -->
+
+<script type="text/javascript" src="/example/index.js"></script>
+</body>
+</html>
