@@ -80,6 +80,12 @@
 
       <hr>
 
+      <h2>Whys and hows:</h2>
+
+      <p>Flippant is tiny. It does just enough and no more. It has zero dependencies.</p>
+      <p>Flippant is easily customized. A couple of arguments, and CSS.</p>
+      <p>Flippant exports a single function: <code>flip</code>. Use it to flip things!</p>
+
         <pre>
 var front = document.getElementByID('flipthis')
   , back_content = "&lt;h1>I'm the back!&lt;/h1>" <span class="muted">// Generate or pull any HTML you want for the back.</span>
@@ -101,7 +107,11 @@ $(back).trigger('close')</pre>
         </p>
 <pre>back = flippant.flip(front, back_content, 'modal', 'my-modal-classname')</pre>
 
-<p>74.3% of the magic is in <a href="/css/flippant.css">the css file</a>.</p>
+<p>The full API:</p>
+
+<pre>flip(element_to_flip, content_for_back, type(modal/card), classname_for_back) -> back_element</pre>
+
+<p>74.3% of the magic is in <a href="/css/flippant.css">the css file</a>. Override however you'd like.</p>
 
     </div> <!-- /container -->
 
