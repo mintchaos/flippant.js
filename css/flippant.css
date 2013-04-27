@@ -43,33 +43,24 @@
 	-webkit-transform: perspective(300px) rotateY(0deg);
 }
 
-.flippant-modal-dark {
+.flippant-modal-dark, .flippant-modal-light {
 	position: fixed;
 	margin: 0;
 	top: 2.5%;
 	left: 2.5%;
 	width: 95%;
 	height: 95%;
+	padding: 1em;
+	box-sizing: border-box;
 	background: rgba(0,0,0,0.7);
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	padding: 1em;
-	box-sizing: border-box;
-	color: white;
 }
 
-.flippant-modal-dark p { color: white;}
+.flippant-modal-dark, .flippant-modal-dark p { color: white;}
 
 .flippant-modal-light {
-	position: fixed;
-	margin: 0;
-	top: 2.5%;
-	left: 2.5%;
-	width: 95%;
-	height: 95%;
 	background: rgba(230,230,230,230.7);
 	box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-	padding: 1em;
-	box-sizing: border-box;
 	border-radius: 5px;
 	border: 1px solid #aaa;
 }
