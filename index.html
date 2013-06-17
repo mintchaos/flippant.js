@@ -1,8 +1,8 @@
 <html>
 <head>
 	<title>Testing.</title>
-	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="/css/flippant.css">
+<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="flippant.css">
   <style type="text/css">
     .container { margin-top: 2em; }
 
@@ -96,7 +96,13 @@ back = flippant.flip(front, back_content)
 <span class="muted">// this creates the back element, sizes it and flips it around.</span>
 
 <span class="muted">// invoke the close event on the back element when it's time to close.</span>
-$(back).trigger('close')</pre>
+
+<span class="muted">// call the close method on the back element when it's time to close.</span>
+back.close()
+<span class="muted">// alternatively you can trigger a close event on the back element if you fancy.
+// var close_event = new CustomEvent('close')
+// back.dispatchEvent(close_event)</span>
+</pre>
         <!-- <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p> -->
         <p>Two modes: <code>card</code> (the default), and <code>modal</code>.</p>
 <pre>back = flippant.flip(front, back_content, 'modal')</pre>
@@ -111,10 +117,11 @@ $(back).trigger('close')</pre>
 
 <pre>flip(element_to_flip, content_for_back, type(modal/card), classname_for_back) -> back_element</pre>
 
-<p>74.3% of the magic is in <a href="/css/flippant.css">the css file</a>. Override however you'd like.</p>
+<p>74.3% of the magic is in <a href="flippant.css">the css file</a>. Override however you'd like.</p>
 
     </div> <!-- /container -->
 
-<script type="text/javascript" src="/example/index.js"></script>
+<script type="text/javascript" src="flippant.js"></script>
+<script type="text/javascript" src="example/browsery.js"></script>
 </body>
 </html>
