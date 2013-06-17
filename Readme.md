@@ -9,7 +9,7 @@ Whys and hows:
 
 * Flippant is tiny. It does just enough and no more. It has zero dependencies.
 * Flippant is easily customized. A couple of arguments, and CSS.
-* Flippant has a single function: `flippany.flip`. Use it to flip things!
+* Flippant has a single function: `flippant.flip`. Use it to flip things!
 
 ```javascript
 var front = document.getElementByID('flipthis')
