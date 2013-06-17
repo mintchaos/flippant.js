@@ -1,3 +1,9 @@
+Demonstrations:
+===============
+
+Are over here: http://mintchaos.github.io/flippant.js/
+
+
 Whys and hows:
 ==============
 
