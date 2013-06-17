@@ -1,14 +1,15 @@
 .flippant {
-	transform: perspective(300px) rotateY(0deg);
-	-webkit-transform: perspective(300px) rotateY(0deg);
-	-moz-transform: perspective(300px) rotateY(0deg);
+	transform: perspective(500px) rotateY(0deg);
+	-webkit-transform: perspective(500px) rotateY(0deg);
+	-moz-transform: perspective(500px) rotateY(0deg);
 	/*z-index: 200;*/
 }
 
 .flippant-back {
-	transform: perspective(300px) rotateY(-180deg);
-	-moz-transform: perspective(300px) rotateY(-180deg);
-	-webkit-transform: perspective(300px) rotateY(-180deg);
+	transform: perspective(500px) rotateY(-180deg);
+	-moz-transform: perspective(500px) rotateY(-180deg);
+	-webkit-transform: perspective(500px) rotateY(-180deg);
+	height: 0;
 	/*z-index: 200;*/
 }
 
@@ -31,16 +32,16 @@
 }
 
 .flippant.flipped {
-	transform: perspective(300px) rotateY(180deg);
-	-moz-transform: perspective(300px) rotateY(180deg);
-	-webkit-transform: perspective(300px) rotateY(180deg);
+	transform: perspective(500px) rotateY(180deg);
+	-moz-transform: perspective(500px) rotateY(180deg);
+	-webkit-transform: perspective(500px) rotateY(180deg);
 
 }
 
 .flippant-back.flipped  {
-	transform: perspective(300px) rotateY(0deg);
-	-moz-transform: perspective(300px) rotateY(0deg);
-	-webkit-transform: perspective(300px) rotateY(0deg);
+	transform: perspective(500px) rotateY(0deg);
+	-moz-transform: perspective(500px) rotateY(0deg);
+	-webkit-transform: perspective(500px) rotateY(0deg);
 }
 
 .flippant-modal-dark, .flippant-modal-light {
