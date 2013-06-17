@@ -9,7 +9,7 @@ document.addEventListener('click', function(e) {
     var flipper = e.target.parentNode.parentNode
     var back
     var input = '<p><input type="text" value="' + flipper.querySelector('h2').innerText + '"></p>'
-    var textarea = '<textarea style="width:100%; max-width:32em; height:8em;">' + flipper.querySelector('p').innerText + '</textarea><br><button class="btn">Update</button>'
+    var textarea = '<textarea style="width:100%; max-width:32em; height:12em;">' + flipper.querySelector('p').innerText + '</textarea><br><button class="btn">Update</button>'
 
     if (e.target.classList.contains('card')) {
       back = flip(flipper, "<p>It's a card!</p>" + input + textarea)
