@@ -60,7 +60,7 @@
 .flippant-modal-dark, .flippant-modal-dark p { color: white;}
 
 .flippant-modal-light {
-	background: rgba(230,230,230,230.7);
+	background: rgba(230,230,230,0.7);
 	box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
 	border-radius: 5px;
 	border: 1px solid #aaa;
