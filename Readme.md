@@ -12,7 +12,7 @@ Whys and hows:
 * Flippant has a single function: `flippant.flip`. Use it to flip things!
 
 ```javascript
-var front = document.getElementByID('flipthis')
+var front = document.getElementById('flipthis')
   , back_content = "&lt;h1>I'm the back!&lt;/h1>" // Generate or pull any HTML you want for the back.
   , back
 
