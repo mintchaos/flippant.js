@@ -20,8 +20,6 @@ var front = document.getElementById('flipthis')
 back = flippant.flip(front, back_content)
 // this creates the back element, sizes it and flips it around.
 
-// invoke the close event on the back element when it's time to close.
-
 // call the close method on the back element when it's time to close.
 back.close()
 // alternatively you can trigger a close event on the back element if you fancy.
