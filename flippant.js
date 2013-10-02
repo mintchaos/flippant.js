@@ -60,23 +60,23 @@ function flip(flipper, content, type, class_name, timeout) {
 }
 
 function set_styles(back, front, position) {
-  back.style.position = position
-  back.style.top = front.offsetTop + "px"
-  back.style.left = front.offsetLeft + "px"
-  back.style['min-height'] = front.offsetHeight + "px"
-  back.style.width = front.offsetWidth + "px"
-  back.style["z-index"] = 9999
+  back.style.setProperty('position', position)
+  back.style.setProperty('top', front.offsetTop + "px")
+  back.style.setProperty('left', front.offsetLeft + "px")
+  back.style.setProperty('min-height', front.offsetHeight + "px")
+  back.style.setProperty('width', front.offsetWidth + "px")
+  back.style.setProperty('z-index', 9999)
 }
 
 function null_styles(back) {
-  back.style.top = null
-  back.style.left = null
-  back.style.height = null
-  back.style.width = null
+  back.style.removeProperty('top')
+  back.style.removeProperty('left')
+  back.style.removeProperty('height')
+  back.style.removeProperty('width')
 }
 
 function card_styles(back) {
-  back.style.height = 'auto'
+  back.style.setProperty('height', 'auto')
 }
 },{}]},{},[1])(1)
 });
