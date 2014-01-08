@@ -2,7 +2,7 @@
 return (function(e,t,n){function i(n,s){if(!t[n]){if(!e[n]){var o=typeof require=="function"&&require;if(!s&&o)return o(n,!0);if(r)return r(n,!0);throw new Error("Cannot find module '"+n+"'")}var u=t[n]={exports:{}};e[n][0].call(u.exports,function(t){var r=e[n][1][t];return i(r?r:t)},u,u.exports)}return t[n].exports}var r=typeof require=="function"&&require;for(var s=0;s<n.length;s++)i(n[s]);return i})({1:[function(require,module,exports){
 exports.flip = flip
 
-function flip(flipper, content, type, class_name, timeout) {
+function flip(flipper, back, type, class_name, timeout) {
   var position
     , back
     , style_func
@@ -21,10 +21,7 @@ function flip(flipper, content, type, class_name, timeout) {
     style_func = card_styles
   }
 
-  back = document.createElement('div')
-  document.body.appendChild(back)
   set_styles(back, flipper, position)
-  back.innerHTML = content
 
   flipper.classList.add('flippant')
   back.classList.add('flippant-back')
@@ -52,7 +49,6 @@ function flip(flipper, content, type, class_name, timeout) {
     flipper.classList.remove('flipped')
     window.setTimeout(function () {
       back.classList.remove(class_name)
-      document.body.removeChild(back)
     }, timeout)
   }
 
