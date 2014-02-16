@@ -2,6 +2,34 @@
 return (function(e,t,n){function i(n,s){if(!t[n]){if(!e[n]){var o=typeof require=="function"&&require;if(!s&&o)return o(n,!0);if(r)return r(n,!0);throw new Error("Cannot find module '"+n+"'")}var u=t[n]={exports:{}};e[n][0].call(u.exports,function(t){var r=e[n][1][t];return i(r?r:t)},u,u.exports)}return t[n].exports}var r=typeof require=="function"&&require;for(var s=0;s<n.length;s++)i(n[s]);return i})({1:[function(require,module,exports){
 exports.flip = flip
 
+var _flippant_ie_ver = (function(){
+    var undef,
+        v = 3,
+        div = document.createElement('div'),
+        all = div.getElementsByTagName('i');
+    while (
+        div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+        all[0]
+    );
+    return v > 4 ? v : undef;
+}());
+
+function _flippant_add_class(o, cls) {
+  if (_flippant_ie_ver < 10) {
+    o.className += ' '+cls;
+  } else {
+    o.classList.add(cls);
+  }
+}
+
+function _flippant_remove_class(o, cls) {
+  if (_flippant_ie_ver < 10) {
+    o.className = (' '+o.className+' ').replace(' '+cls+' ',' ');
+  } else {
+    o.classList.remove(cls)
+  }
+}
+
 function flip(flipper, content, type, class_name, timeout) {
   var position
     , back
@@ -26,9 +54,9 @@ function flip(flipper, content, type, class_name, timeout) {
   set_styles(back, flipper, position)
   back.innerHTML = content
 
-  flipper.classList.add('flippant')
-  back.classList.add('flippant-back')
-  back.classList.add(class_name)
+  _flippant_add_class(flipper, 'flippant');
+  _flippant_add_class(back, 'flippant-back');
+  _flippant_add_class(back, class_name);
   if (position == "absolute") {
     style_func(back)
   } else {
@@ -37,21 +65,25 @@ function flip(flipper, content, type, class_name, timeout) {
     }, 0)
   }
   window.setTimeout(function () {
-    back.classList.add('flipper')
-    back.classList.add('flipped')
-    flipper.classList.add('flipped')
+    _flippant_add_class(back, 'flipper');
+    _flippant_add_class(back, 'flipped');
+    _flippant_add_class(flipper, 'flipped');
   }, 0)
 
-  back.addEventListener('close', close)
+  if (!back.addEventListener) {
+    back.attachEvent('close', close)
+  } else {
+    back.addEventListener('close', close)
+  }
   back.close = close
 
   function close() {
     set_styles(back, flipper, position)
-    back.classList.remove('flipped')
-    back.classList.remove('flipped')
-    flipper.classList.remove('flipped')
+    _flippant_remove_class(back, 'flipper')
+    _flippant_remove_class(back, 'flipped')
+    _flippant_remove_class(flipper, 'flipped')
     window.setTimeout(function () {
-      back.classList.remove(class_name)
+      _flippant_remove_class(back, class_name)
       document.body.removeChild(back)
     }, timeout)
   }
@@ -65,7 +97,7 @@ function set_styles(back, front, position) {
   back.style.left = front.offsetLeft + "px"
   back.style['min-height'] = front.offsetHeight + "px"
   back.style.width = front.offsetWidth + "px"
-  back.style["z-index"] = 9999
+  back.style["z-index"] = 999
 }
 
 function null_styles(back) {
