@@ -1,8 +1,9 @@
 Demonstrations:
 ===============
 
-Are over here: http://mintchaos.github.io/flippant.js/
+Are over here: http://mintchaos.github.io/flippant.js/.
 
+Local demo available in demo/demo.html using flippant bundle.
 
 Whys and hows:
 ==============
@@ -50,3 +51,25 @@ The full API:
 --------------
 
 Grab the JS and the CSS file. Use them. The JS file is a UMD package so require or commonjs it or just use it. It's not picky.
+
+
+Flippant Bundle
+---------------
+
+/lib/flippant-bundle.js contains both the flippant script and styling as a standalone module, rather than
+two separate files.
+
+Developers can rebuild this package if npm and Browserify are installed.
+
+Install cssify:
+`npm install`
+
+`npm run-script browserify`
+
+Simple to use:
+
+`<script type="text/javascript" src="flippant-bundle.js"></script>`
+
+...
+
+`flippant.flip(flipper, input + textarea)`
