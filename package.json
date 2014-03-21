@@ -1,0 +1,12 @@
+{
+  "name": "flippant.js",
+  "version": "1.0.0",
+  "description": "A mini dependancy-less UI lib for flipping over DOM nodes.",
+  "main": "flippant-bundle.js",
+  "dependencies": {
+    "cssify": "~0.5.0"
+  },
+  "scripts": {
+    "browserify": "browserify -t cssify lib/flip.js --standalone flippant > lib/flippant-bundle.js"
+  }
+}
