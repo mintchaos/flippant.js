@@ -52,7 +52,7 @@ function flip(flipper, content, type, class_name, timeout) {
     flipper.classList.remove('flipped')
     window.setTimeout(function () {
       back.classList.remove(class_name)
-      document.body.removeChild(back)
+      back.parentNode && back.parentNode.removeChild(back)
     }, timeout)
   }
 
