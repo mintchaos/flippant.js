@@ -34,13 +34,13 @@ function flip(flipper, content, type, class_name, timeout) {
   } else {
     window.setTimeout(function () {
       style_func(back)
-    }, 0)
+    }, timeout)
   }
   window.setTimeout(function () {
     back.classList.add('flipper')
     back.classList.add('flipped')
     flipper.classList.add('flipped')
-  }, 0)
+  }, timeout)
 
   back.addEventListener('close', close)
   back.close = close
@@ -52,7 +52,7 @@ function flip(flipper, content, type, class_name, timeout) {
     flipper.classList.remove('flipped')
     window.setTimeout(function () {
       back.classList.remove(class_name)
-      document.body.removeChild(back)
+      back.parentNode && back.parentNode.removeChild(back)
     }, timeout)
   }
 
