@@ -61,8 +61,16 @@ function flip(flipper, content, type, class_name, timeout) {
 
 function set_styles(back, front, position) {
   back.style.position = position
-  back.style.top = front.offsetTop + "px"
-  back.style.left = front.offsetLeft + "px"
+  cur = front
+  totalLeft = 0
+  totalTop = 0
+  while (cur) {
+    totalLeft += cur.offsetLeft;
+    totalTop += cur.offsetTop;
+    cur = cur.offsetParent;
+  }
+  back.style.top = totalTop + "px"
+  back.style.left = totalLeft + "px"
   back.style['min-height'] = front.offsetHeight + "px"
   back.style.width = front.offsetWidth + "px"
   back.style["z-index"] = 9999
